@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--
+        <meta name="viewport" content="width=1680, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <meta name="viewport" content="width=1680">
+    <title>计划系统</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+
+    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!--<link href="static/dist/css/swiper.min.css" rel="stylesheet">-->
+    <link href="../static/dist/css/animate.css" rel="stylesheet">
+
+    <link href="../static/css/main.css" rel="stylesheet">
+
+</head>
+<body id="project-line">
+
+<!--[if lt IE 9]>
+<p class="updateBrowser">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+<main class="page page-main ys-amp animated" id="page-main" role="main" ng-controller="mainCtrl as ctrl">
+
+    <div class="">
+       <div ui-view="menu" class="animated">
+           <div class="amp-header-filter clearfix">
+               <div class="dropdown pull-left">
+                   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                       Dropdown
+                       <span class="caret"></span>
+                   </button>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                       <li><a href="#">Action</a></li>
+                       <li><a href="#">Another action</a></li>
+                       <li><a href="#">Something else here</a></li>
+                       <li role="separator" class="divider"></li>
+                       <li><a href="#">Separated link</a></li>
+                   </ul>
+               </div>
+               <div class="ys-date-picker pull-left" date-picker="" date-select="tCtrl.selectedDate({date:date})" ng-model="tCtrl.curDate" date-directive-name="tCtrl.dateDirectiveName" >
+               </div>
+           </div><!--amp-header-filter-->
+
+       </div><!-- ui-view="menu" -->
+
+       <div ui-view="content" class="animated">
+           <div class="amp-block">
+               <div class="amp-table-wrapper" id="project-info">
+                   <table class="table table-right-bordered amp-table">
+                       <thead>
+                       <tr>
+                           <th>总面积(m&sup2)</th>
+                           <th>出租率</th>
+                           <th>出租面积(m&sup2)</th>
+                           <th>铺位数(个)</th>
+                           <th>在租均价(元/m&sup2/天)</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <tr class="tr-info-main">
+                           <td>
+                               <h3 class="ng-binding">18,600</h3>
+                           </td>
+                           <td>
+                               <h3 class="ng-binding">90%</h3>
+                           </td>
+                           <td>
+                               <h3 class="ng-binding">16,600</h3>
+                           </td>
+                           <td>
+                               <h3 class="ng-binding">128</h3>
+                           </td>
+                           <td>
+                               <h3 class="ng-binding">6.2</h3>
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div><!--ys-block-->
+           <div class="amp-block">
+               <div class="amp-section amp-section-left">
+                   <div class="amp-section-content">
+                       <div class="panel-group" id="amp-accordion" >
+                           <div class="panel panel-default" ng-repeat="(floor,forms) in rfCtrl.area_arrange track by $index" id="panel-1" cur-floor="{{floor}}" set-pop-temp="rfCtrl.setPopoverTemp(floor,type)"  ng-model="rfCtrl.floorsNum" drag-drop>
+                               <div class="panel-heading" id="heading-1" ng-model="rfCtrl.popoverTemp">
+                                   <h4 class="panel-title">
+                                       <div class="amp-floor-title">
+                                           <button class="amp-accordion-btn collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
+                                               L4<!--<em class="ys-icon icon-menu-down"></em>-->
+                                               <em class="amp-area-addon">2,200m&sup2</em>
+                                           </button>
+                                       </div><!--floor title-->
+
+
+                                       <div class="amp-floor-area">
+                                           <div class="amp-floor-rented"></div>
+                                           <em class="amp-area-addon">1,980m&sup2</em>
+                                           <em class="amp-area-addon">90%</em>
+                                       </div><!--floor-header-->
+
+                                   </h4>
+                               </div>
+                               <div id="collapse-{{floor}}" class="panel-collapse collapse">
+                                   <div class="panel-body">
+                                        <ul class="amp-shop-wrapper">
+                                            <li class="amp-shop-item">
+                                                <h5>301</h5>
+                                                <span>小南国</span>
+                                            </li>
+                                        </ul>
+
+                                   </div>
+                               </div>
+                           </div><!--panel-->
+
+                       </div><!--panel group-->
+                       <div class="legend-wrapper">
+                           <div class="chart-legend">
+                               <span><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">合同到期</i></span>
+                               <span><em class="color-label" style="background-color:#ea7444;"></em><i class="name">欠费</i></span>
+                           </div>
+                       </div><!--legend-wrapper-->
+                   </div><!--amp-section-content-->
+               </div><!--ys-section-->
+               <div class="amp-section amp-section-right">
+                   <div class="amp-panel amp-panel-project">
+                        <div class="amp-panel-title">
+                            <h3>L3</h3>
+                            <div class="amp-table-wrapper">
+                                <table class="table table-right-bordered amp-table">
+                                    <thead>
+                                    <tr>
+                                        <th>可出租面积(m&sup2)</th>
+                                        <th>铺位数(个)</th>
+                                        <th>开业率</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="tr-info-main">
+                                        <td>
+                                            <h3 class="ng-binding">2,700</h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="ng-binding">14</h3>
+                                        </td>
+                                        <td>
+                                            <h3 class="ng-binding">100%</h3>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div><!--amp-panel-title-->
+                       <div class="amp-table-content">
+                           <div class="amp-table-wrapper">
+                               <table class="table table-right-bordered amp-table">
+                                   <colgroup>
+                                       <col width="30%">
+                                       <col width="70%">
+                                   </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>开业商户</th>
+                                            <td>0个</td>
+                                        </tr>
+                                        <tr>
+                                            <th>出租率</th>
+                                            <td>100%</td>
+                                        </tr>
+                                        <tr>
+                                            <th>平均租金</th>
+                                            <td>7元/m&sup2/天</td>
+                                        </tr>
+                                        <tr>
+                                            <th>租金</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>物管</th>
+                                            <td></td>
+                                        </tr>
+                                    </tbody><!--tbody-->
+
+                                   <tbody>
+                                   <tr>
+                                       <th>欠费</th>
+                                       <td>－</td>
+                                   </tr>
+                                   <tr>
+                                       <th>到期</th>
+                                       <td>－</td>
+                                   </tr>
+
+                                   </tbody><!--tbody-->
+                               </table>
+                           </div>
+                       </div><!--amp-table-content-->
+                   </div><!--ys-panel-->
+                   <div class="amp-panel amp-panel-shop">
+                       <div class="amp-panel-title">
+                           <h3>小南国</h3>
+                           <div class="amp-table-wrapper">
+                               <table class="table table-right-bordered amp-table">
+                                   <thead>
+                                   <tr>
+                                       <th>店铺号</th>
+                                       <th>店铺面积(m&sup2)</th>
+
+                                   </tr>
+                                   </thead>
+                                   <tbody>
+                                   <tr class="tr-info-main">
+                                       <td>
+                                           <h3 class="ng-binding">301</h3>
+                                       </td>
+                                       <td>
+                                           <h3 class="ng-binding">1,500</h3>
+                                       </td>
+
+                                   </tr>
+                                   </tbody>
+                               </table>
+                           </div>
+
+                       </div><!--amp-panel-title-->
+                       <div class="amp-table-content">
+                           <div class="amp-table-wrapper">
+                               <table class="table table-right-bordered amp-table">
+                                   <colgroup>
+                                       <col width="30%">
+                                       <col width="70%">
+                                   </colgroup>
+                                   <tbody>
+                                   <tr>
+                                       <th>签批业态</th>
+                                       <td>餐饮</td>
+                                   </tr>
+                                   <tr>
+                                       <th>当前业态</th>
+                                       <td>餐饮</td>
+                                   </tr>
+                                   <tr>
+                                       <th>铺位类型</th>
+                                       <td>委托经营</td>
+                                   </tr>
+                                   <tr>
+                                       <th>商铺定位</th>
+                                       <td>大租户</td>
+                                   </tr>
+                                   <tr>
+                                       <th>商户名</th>
+                                       <td>小南国</td>
+                                   </tr>
+                                   <tr>
+                                       <th>面积</th>
+                                       <td>5,554.73m&sup2</td>
+                                   </tr>
+                                   <tr>
+                                       <th>租期</th>
+                                       <td>10年0个月0天</td>
+                                   </tr>
+                                   <tr>
+                                       <th>单价(标准)</th>
+                                       <td>0.4元/m&sup2/天</td>
+                                   </tr>
+
+                                   <tr>
+                                       <th>总额</th>
+                                       <td>-元</td>
+                                   </tr>
+                                   <tr>
+                                       <th>欠费总额</th>
+                                       <td>-元</td>
+                                   </tr>
+                                   </tbody><!--tbody-->
+
+                                   <tbody>
+                                   <tr>
+                                       <th>租赁合同</th>
+                                       <td><a href="#">LD-03F301</a></td>
+                                   </tr>
+                                   <tr>
+                                       <th>租赁意向审批表</th>
+                                       <td><a href="#">10158</a></td>
+                                   </tr>
+                                   <tr>
+                                       <th>合同审批表</th>
+                                       <td><a href="#">10296</a></td>
+                                   </tr>
+                                   </tbody><!--tbody-->
+                               </table>
+                           </div><!--amp-table-wrapper-->
+
+                            <div class="amp-chart-wrapper" id="rent-chart-wrapper" style="padding-left:30px;padding-right:0;">
+                                <div id="amp-rent-chart" style="height:310px;"
+                                     sim-chart chart-data="sCtrl.chartData"></div>
+                                <div class="chart-legend">
+                                    <span><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">应收</i></span>
+                                    <span><em class="color-label" style="background-color:#ea7444;"></em><i class="name">实收</i></span>
+                                    <span><em class="color-label" style="background-color:#1abd9d;"></em><i class="name">租金包</i></span>
+                                </div>
+                            </div>
+                       </div><!--amp-table-content-->
+                   </div><!--ys-panel-->
+               </div><!--ys-section-->
+           </div><!--ys-block-->
+       </div><!-- ui-view="content" -->
+    </div>
+
+    <!-- rightpanel -->
+    <div class="rightpanel">
+        <ui-view name="right"></ui-view>
+    </div>
+    <!--modal parts-->
+    <ui-view name="modal"></ui-view>
+    <!--<div class="modalpanel">
+    </div>-->
+
+
+    <!--end modal parts-->
+    <!--backdrop loading-->
+    <div class="backdrop"></div>
+    <!--end backdrop loading-->
+    <!--<div class="ys-loading" ng-show="ctrl.loadingShow">
+        <div class="loading-wrapper">
+            <div class="loading-ani">
+                <img src="../static/images/loading.gif">
+            </div>
+           &lt;!&ndash; <span>处理中...</span>&ndash;&gt;
+        </div>
+    </div>-->
+
+</main>
+<!--
+<script data-main="../static/js/main.js" src="../static/dist/js/require.js"></script>
+-->
+
+</body>
