@@ -34,13 +34,13 @@
 </div>
 <main class="page page-main ys-amp animated" id="page-main" role="main" ng-controller="mainCtrl as ctrl">
 
-    <div class="">
+    <div class="page-container">
        <div ui-view="menu" class="animated">
            <div class="amp-header-filter clearfix">
-               <div class="dropdown pull-left">
-                   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                       Dropdown
-                       <span class="caret"></span>
+               <div class="dropdown amp-dropdown pull-left">
+                   <button class="btn btn-default dropdown-toggle" type="button" id="js-menu-project" data-toggle="dropdown">
+                       项目
+                       <span class="glyphicon glyphicon-menu-down"></span>
                    </button>
                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                        <li><a href="#">Action</a></li>
@@ -49,9 +49,27 @@
                        <li role="separator" class="divider"></li>
                        <li><a href="#">Separated link</a></li>
                    </ul>
-               </div>
-               <div class="ys-date-picker pull-left" date-picker="" date-select="tCtrl.selectedDate({date:date})" ng-model="tCtrl.curDate" date-directive-name="tCtrl.dateDirectiveName" >
-               </div>
+               </div><!--amp-dropdown-->
+              <!-- <div class="ys-date-picker pull-left" date-picker="" date-select="tCtrl.selectedDate({date:date})" ng-model="tCtrl.curDate" date-directive-name="tCtrl.dateDirectiveName" >
+               </div>-->
+               <div class="ys-date-picker pull-left">
+                   <div class="input-group date ys-datepicker">
+                       <input size="16" type="text" value="" data-provide="datepicker" name="date- {{dateDirectiveName}}" id="date-{{dateDirectiveName}}">
+                   </div>
+               </div><!--ys-date-picker-->
+               <div class="dropdown amp-dropdown pull-left">
+                   <button class="btn btn-default dropdown-toggle" type="button" id="js-menu-area" data-toggle="dropdown">
+                       建筑面积
+                       <span class="glyphicon glyphicon-menu-down"></span>
+                   </button>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                       <li><a href="#">Action</a></li>
+                       <li><a href="#">Another action</a></li>
+                       <li><a href="#">Something else here</a></li>
+                       <li role="separator" class="divider"></li>
+                       <li><a href="#">Separated link</a></li>
+                   </ul>
+               </div><!--amp-dropdown-->
            </div><!--amp-header-filter-->
 
        </div><!-- ui-view="menu" -->
@@ -91,35 +109,43 @@
                    </table>
                </div>
            </div><!--ys-block-->
-           <div class="amp-block">
+           <div class="amp-block" id="amp-block-floor">
                <div class="amp-section amp-section-left">
                    <div class="amp-section-content">
                        <div class="panel-group" id="amp-accordion" >
                            <div class="panel panel-default" ng-repeat="(floor,forms) in rfCtrl.area_arrange track by $index" id="panel-1" cur-floor="{{floor}}" set-pop-temp="rfCtrl.setPopoverTemp(floor,type)"  ng-model="rfCtrl.floorsNum" drag-drop>
                                <div class="panel-heading" id="heading-1" ng-model="rfCtrl.popoverTemp">
-                                   <h4 class="panel-title">
+                                   <div class="panel-title collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
                                        <div class="amp-floor-title">
-                                           <button class="amp-accordion-btn collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
-                                               L4<!--<em class="ys-icon icon-menu-down"></em>-->
+                                          <!-- <button class="amp-accordion-btn collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
+                                               L4&lt;!&ndash;<em class="ys-icon icon-menu-down"></em>&ndash;&gt;
                                                <em class="amp-area-addon">2,200m&sup2</em>
-                                           </button>
+                                           </button>-->
+                                            <h5>L4</h5>
+                                           <em class="amp-area-addon">2,200m&sup2</em>
                                        </div><!--floor title-->
 
 
                                        <div class="amp-floor-area">
-                                           <div class="amp-floor-rented"></div>
-                                           <em class="amp-area-addon">1,980m&sup2</em>
-                                           <em class="amp-area-addon">90%</em>
+                                           <div class="amp-floor-rented" style="width:70%">
+                                               <div class="floor-rented-info clearfix">
+                                                   <em class="amp-rented-area pull-left">1,980m&sup2</em>
+                                                   <em class="amp-rented-rate pull-right">90%</em>
+                                               </div>
+                                           </div>
+
                                        </div><!--floor-header-->
 
-                                   </h4>
+                                   </div>
                                </div>
-                               <div id="collapse-{{floor}}" class="panel-collapse collapse">
+                               <div id="collapse-1" class="panel-collapse collapse">
                                    <div class="panel-body">
-                                        <ul class="amp-shop-wrapper">
+                                        <ul class="amp-shop-wrapper clearfix">
                                             <li class="amp-shop-item">
-                                                <h5>301</h5>
-                                                <span>小南国</span>
+                                               <div class="shop-item-info">
+                                                   <h5>301</h5>
+                                                   <span>小南国</span>
+                                               </div>
                                             </li>
                                         </ul>
 
@@ -130,8 +156,11 @@
                        </div><!--panel group-->
                        <div class="legend-wrapper">
                            <div class="chart-legend">
-                               <span><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">合同到期</i></span>
-                               <span><em class="color-label" style="background-color:#ea7444;"></em><i class="name">欠费</i></span>
+                               <span class="chart-legend-item"><em class="color-label" style="background-color:#8592a3;"></em><i class="name">空铺</i></span>
+                               <span class="chart-legend-item"><em class="color-label" style="background-color:#6addfc;"></em><i class="name">已租店铺</i></span>
+                               <span class="chart-legend-item"><em class="color-label" style="background-color:#fad24c;"></em><i class="name">合同到期</i></span>
+                               <span class="chart-legend-item"><em class="color-label" style="background-color:#ee1c43;"></em><i class="name">欠费</i></span>
+                               <span class="chart-legend-item"><em class="color-label" style="background-color:#f58c4b;"></em><i class="name">当前选中</i></span>
                            </div>
                        </div><!--legend-wrapper-->
                    </div><!--amp-section-content-->
@@ -349,5 +378,7 @@
 <!--
 <script data-main="../static/js/main.js" src="../static/dist/js/require.js"></script>
 -->
-
+<script src="../static/dist/js/jquery-3.2.0.min.js"></script>
+<script src="../static/dist/js/bootstrap.js"></script>
+<script src="../static/dist/js/bootstrap-datetimepicker.js"></script>
 </body>
