@@ -1,6 +1,6 @@
 /**
  * Created by whobird on 17/5/12.
  */
-define(["./app.directives","./dateDirective","./listtreeDirective"],function(){
+define(["./app.directives","./dateDirective","./listtreeDirective","./rentChartDirective"],function(){
 
 });
