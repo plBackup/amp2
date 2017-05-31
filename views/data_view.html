@@ -13,19 +13,19 @@
             <tbody>
             <tr class="tr-info-main">
                 <td>
-                    <h3 class="ng-binding">18,600</h3>
+                    <h3 class="ng-binding">{{dCtrl.projectData.area|number:2}}</h3>
                 </td>
                 <td>
-                    <h3 class="ng-binding">90%</h3>
+                    <h3 class="ng-binding">{{dCtrl.projectData.rental_rate|number:2}}%</h3>
                 </td>
                 <td>
-                    <h3 class="ng-binding">16,600</h3>
+                    <h3 class="ng-binding">{{dCtrl.projectData.rentable_area|number:2}}</h3>
                 </td>
                 <td>
-                    <h3 class="ng-binding">128</h3>
+                    <h3 class="ng-binding">{{dCtrl.projectData.shop_num|number:0}}</h3>
                 </td>
                 <td>
-                    <h3 class="ng-binding">6.2</h3>
+                    <h3 class="ng-binding">{{dCtrl.projectData.avg_rental|number:2}}</h3>
                 </td>
             </tr>
             </tbody>
@@ -259,8 +259,8 @@
                 </div><!--amp-table-wrapper-->
 
                 <div class="amp-chart-wrapper" id="rent-chart-wrapper" style="padding-left:30px;padding-right:0;">
-                    <div id="amp-rent-chart" style="height:310px;"
-                         rent-chart chart-data="sCtrl.chartData"></div>
+                    <!--<div id="amp-rent-chart" style="height:310px;"
+                         rent-chart chart-data="sCtrl.chartData"></div>-->
                     <div class="chart-legend">
                         <span class="chart-legend-item"><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">应收</i></span>
                         <span class="chart-legend-item"><em class="color-label" style="background-color:#ea7444;"></em><i class="name">实收</i></span>

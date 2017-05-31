@@ -1,8 +1,8 @@
 /**
  * Created by whobird on 17/5/12.
  */
-define(["angular","./app.directives","echarts"],function(angular,directives){
-
+define(["angular","./app.directives","echarts"],function(angular,directives,echarts){
+    console.log(echarts);
     directives.directive('rentChart', ["chartOptService",
         function(chartOptService) {
             return {

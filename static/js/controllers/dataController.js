@@ -8,6 +8,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
         var self=this;
         console.log("project Data==============================");
         console.log(projectData);
+        self.projectData=angular.copy(projectData);
 
     }]);
 
