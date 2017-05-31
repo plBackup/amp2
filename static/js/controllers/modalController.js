@@ -1,7 +1,7 @@
 /**
  * Created by whobird on 17/5/5.
  */
-define(["jquery","angular","zrender/zrender","./app.controllers",],function($,angular,zrender,controllers){
+define(["jquery","angular","./app.controllers",],function($,angular,controllers){
 
     controllers.controller("modalCtrl",["$rootScope","$scope","$http","modalData",function($rootScope,$scope,$http,modalData){
 

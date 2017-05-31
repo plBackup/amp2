@@ -1,7 +1,7 @@
 /**
  * Created by whobird on 17/4/24.
  */
-define(["angular","zrender/zrender","./app.controllers"],function(angular,zrender,controllers){
+define(["angular","./app.controllers"],function(angular,controllers){
 
     controllers.controller("dataCtrl",["$rootScope","$scope","$http","dataNodeService","nodeData","$timeout",function($rootScope,$scope,$http,dataMenuService,nodeData,$timeout){
 

@@ -3,7 +3,6 @@
  */
 define(["js/app"],
     function(app) {
-        console.log(app);
         return app.run([
             '$rootScope',
             '$state',
