@@ -52,42 +52,6 @@ define(["js/app"],
 
                         }
                     })
-/*
-
-                    .state('project', {
-                        //abstract: true,
-                        url: '/main/{pid}',
-                        views:{
-                            'menu':{
-                                templateUrl: '../views/menu_view.html',
-                                controller:"menuCtrl",
-                                controllerAs:"mCtrl"
-                            },
-                            'content': {
-                                templateUrl: '../views/blank_project.html',
-                                /!* controller:"dataCtrl",
-                                 controllerAs:"dCtrl"*!/
-                            },
-                            "right":{
-                                templateUrl: '../views/blank_right.html',
-                            },
-                            "modal":{
-                                templateUrl:"../views/blank_modal.html"
-                            }
-                        },
-                        resolve: {
-
-                            menuData: function(dataMenuService,$stateParams,$rootScope) {
-                                var pid=$stateParams.pid;
-                                var search="?projectCd="+pid;
-                                $rootScope.pid=pid;
-                                return dataMenuService.getData(search);
-                            },
-
-                        }
-                    })
-*/
-
                     .state('project', {
                         //abstract: true,
                         url: '/main/{pid}',
@@ -117,13 +81,12 @@ define(["js/app"],
 
                                  return dataMenuService.getData(search);
                              },
-                            projectData: function(dataNodeService,$stateParams,$rootScope) {
-                                var plan=$stateParams.plan;
-                                $rootScope.plan=plan;
-                                //all代表过滤1:全部 0:未完成
-                                //"planId=4028347044bace9c0144d47419151028&level=1&status=all&all=1"
-                                var search="?planId="+plan+"&level=all&status=all&all=1";
-                                return dataNodeService.getData(search);
+                            projectData: function(dataProjectService,$stateParams,$rootScope) {
+                              /*  var plan=$stateParams.plan;
+                                $rootScope.plan=plan;*/
+                                //var search="?planId="+plan+"&level=all&status=all&all=1";
+                                //return dataProjectService.getData(search);
+                                return dataProjectService.getData();
                             },
                         }
             })
