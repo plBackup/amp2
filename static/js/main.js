@@ -10,9 +10,10 @@ requirejs.config({
         "jquery.datetimepicker": "dist/js/bootstrap-datetimepicker",
         "jquery.datetimepicker.zh": "dist/js/locales/bootstrap-datetimepicker.zh-CN",
         "angular":"dist/js/angular.min",
-        "angularFileUpload":"dist/js/angular-file-upload.min",
+        //"angularFileUpload":"dist/js/angular-file-upload.min",
         "uiRouter":"dist/js/angular-ui-router",
-        zrender: 'dist/js/zrender',
+        //zrender: 'dist/js/zrender',
+        echarts:"dist/js/echarts.common.min",
         domReady:"dist/js/domReady",
     },
     shim: {
@@ -57,7 +58,6 @@ define(['require',
 ],function(require,$,angular){
     'use strict';
     require(['domReady!'],function(document){
-
        angular.bootstrap(document,["app"]);
     });
 

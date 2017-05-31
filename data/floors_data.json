@@ -1,0 +1,19 @@
+[
+  {
+    "id":"floor_01",
+    "name":"1L",
+    "floor_area":2200,
+    "rental_area":1980,
+    "rental_rate":90,
+    "shops":[
+      {
+        "id":"c_101",
+        "name":"101",
+        "shopIds":["shop_101"],
+        "shopNames":["101"],
+        "status":"leasing",
+        "warning":false
+      }
+    ]
+  }
+]

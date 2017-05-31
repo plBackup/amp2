@@ -1,0 +1,12 @@
+{
+  "projects":[
+    {"id":"pid_01", "name":"项目1"},
+    {"id":"pid_02", "name":"项目2"},
+    {"id":"pid_03", "name":"项目3"}
+  ],
+  "date":[],
+  "types":[
+    {"tid":"floorArea","name":"建筑面积"},
+    {"tid":"rentableArea","name":"可租赁面积"}
+  ]
+}

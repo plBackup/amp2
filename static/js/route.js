@@ -12,7 +12,7 @@ define(["js/app"],
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
                 $rootScope.domain="http://192.168.121.24:7900";
-                $rootScope.plink="http://192.168.121.24:7900/PowerDesk/plan7";
+                $rootScope.plink="http://192.168.121.24:7900/project";
             }
         ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
 
@@ -53,6 +53,7 @@ define(["js/app"],
 
                         }
                     })
+/*
 
                     .state('project', {
                         //abstract: true,
@@ -65,8 +66,8 @@ define(["js/app"],
                             },
                             'content': {
                                 templateUrl: '../views/blank_project.html',
-                                /* controller:"dataCtrl",
-                                 controllerAs:"dCtrl"*/
+                                /!* controller:"dataCtrl",
+                                 controllerAs:"dCtrl"*!/
                             },
                             "right":{
                                 templateUrl: '../views/blank_right.html',
@@ -86,10 +87,11 @@ define(["js/app"],
 
                         }
                     })
+*/
 
-                    .state('plan', {
+                    .state('project', {
                         //abstract: true,
-                        url: '/main/{pid}/{plan}',
+                        url: '/main/{pid}',
                         views:{
                             'menu':{
                                 templateUrl: '../views/menu_view.html',
@@ -102,15 +104,10 @@ define(["js/app"],
                                 controllerAs:"dCtrl"
                             },
                             "right":{
-                                templateUrl: '../views/right_view.html',
-                                controller:"rightCtrl",
-                                controllerAs:"rCtrl"
+                                templateUrl: '../views/blank_right.html',
                             },
                             "modal":{
-                                templateUrl:"../views/modal_view.html",
-                                controller:"modalCtrl",
-                                controllerAs:"mCtrl"
-                               // templateUrl:"../views/blank_modal.html"
+                                templateUrl:"../views/blank_modal.html"
                             }
                         },
                         resolve: {
@@ -121,17 +118,13 @@ define(["js/app"],
 
                                  return dataMenuService.getData(search);
                              },
-                            nodeData: function(dataNodeService,$stateParams,$rootScope) {
+                            projectData: function(dataProjectService,$stateParams,$rootScope) {
                                 var plan=$stateParams.plan;
                                 $rootScope.plan=plan;
                                 //all代表过滤1:全部 0:未完成
                                 //"planId=4028347044bace9c0144d47419151028&level=1&status=all&all=1"
                                 var search="?planId="+plan+"&level=all&status=all&all=1";
                                 return dataNodeService.getData(search);
-                            },
-                            modalData: function(dataModalService,$stateParams,$rootScope) {
-
-                                return dataModalService.getData();
                             },
                         }
             })
