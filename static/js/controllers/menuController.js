@@ -16,7 +16,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
         };
 
         self.projects=angular.copy(self.data.projects);
-        self.date=angular.copy(self.data.date);
+        self.menuFilter.date=angular.copy(self.data.date);
         self.types=angular.copy(self.data.types);
 
         self.setModel=function(type,menu){
@@ -28,6 +28,11 @@ define(["angular","./app.controllers"],function(angular,controllers){
             var projectCd=project.id;
             //$location.path("/main/"+projectCd);
         };
+        self.setType=function(type){
+            /**/
+            self.setModel("type",type);
+        };
+
 
         self.isActive=function(menu,model){
             return menu==model;
@@ -35,10 +40,17 @@ define(["angular","./app.controllers"],function(angular,controllers){
 
         self.selectedDate=function(data){
             console.log(data);
+            self.menuFilter.date=data.date.split("-");
+            console.log(self.curDate);
         };
 
-        var cur_date=new Date();
-        self.menuFilter.date=[cur_date.getFullYear(),(cur_date.getMonth()+1),cur_date.getDate()]
+
+        if(typeof self.menuFilter.date=="undefined"||self.menuFilter.date==null){
+            var cur_date=new Date();
+            self.menuFilter.date=[cur_date.getFullYear(),(cur_date.getMonth()+1),cur_date.getDate()]
+        }else{
+           /* var cur_date=self.menuFilter.date.join("-");*/
+        }
         self.curDate=self.menuFilter.date.join("-");
 
         self.dateDirectiveName="project_date";

@@ -13,14 +13,14 @@
      <div class="ys-date-picker pull-left" date-picker="" date-select="mCtrl.selectedDate({date:date})" ng-model="mCtrl.curDate" date-directive-name="mCtrl.dateDirectiveName" >
      </div>
     <!--ys-date-picker-->
-    <div class="dropdown amp-dropdown pull-left">
+    <div class="dropdown amp-dropdown pull-left" >
         <button class="btn btn-default dropdown-toggle" type="button" id="js-menu-area" data-toggle="dropdown">
             建筑面积
             <span class="glyphicon glyphicon-menu-down"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li ng-repeat="project in mCtrl.projects" ng-class="{'active':mCtrl.isActive(project.id,mCtrl.menuFilter.project.id)}">
-                <a data-id={{project.id}} ng-click='mCtrl.setProject(project)'>{{project.name}}</a>
+            <li ng-repeat="type in mCtrl.types" ng-class="{'active':mCtrl.isActive(type.tid,mCtrl.menuFilter.type.tid)}">
+                <a data-id={{type.tid}} ng-click='mCtrl.setType(type)'>{{type.name}}</a>
             </li>
         </ul>
     </div><!--amp-dropdown-->
