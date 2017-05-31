@@ -3,12 +3,13 @@
  */
 define(["angular","./app.controllers"],function(angular,controllers){
 
-    controllers.controller("dataCtrl",["$rootScope","$scope","$http","dataNodeService","projectData","$timeout",function($rootScope,$scope,$http,dataMenuService,projectData,$timeout){
+    controllers.controller("dataCtrl",["$rootScope","$scope","$http","dataProjectService","projectData","$timeout",function($rootScope,$scope,$http,dataProjectService,projectData,$timeout){
 
         var self=this;
         console.log("project Data==============================");
         console.log(projectData);
 
     }]);
+
     //return controllers;
 });
