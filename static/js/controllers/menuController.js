@@ -33,6 +33,16 @@ define(["angular","./app.controllers"],function(angular,controllers){
             return menu==model;
         };
 
+        self.selectedDate=function(data){
+            console.log(data);
+        };
+
+        var cur_date=new Date();
+        self.menuFilter.date=[cur_date.getFullYear(),(cur_date.getMonth()+1),cur_date.getDate()]
+        self.curDate=self.menuFilter.date.join("-");
+
+        self.dateDirectiveName="project_date";
+
         function _init(){
             var pid=$rootScope.pid;
             var curProject=undefined;

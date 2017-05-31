@@ -10,7 +10,7 @@
             </li>
         </ul>
     </div><!--amp-dropdown-->
-     <div class="ys-date-picker pull-left" date-picker="" date-select="tCtrl.selectedDate({date:date})" ng-model="tCtrl.curDate" date-directive-name="tCtrl.dateDirectiveName" >
+     <div class="ys-date-picker pull-left" date-picker="" date-select="mCtrl.selectedDate({date:date})" ng-model="mCtrl.curDate" date-directive-name="mCtrl.dateDirectiveName" >
      </div>
     <!--ys-date-picker-->
     <div class="dropdown amp-dropdown pull-left">
@@ -19,7 +19,9 @@
             <span class="glyphicon glyphicon-menu-down"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
+            <li ng-repeat="project in mCtrl.projects" ng-class="{'active':mCtrl.isActive(project.id,mCtrl.menuFilter.project.id)}">
+                <a data-id={{project.id}} ng-click='mCtrl.setProject(project)'>{{project.name}}</a>
+            </li>
         </ul>
     </div><!--amp-dropdown-->
 </div><!--amp-header-filter-->
