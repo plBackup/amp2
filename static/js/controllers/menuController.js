@@ -26,17 +26,15 @@ define(["angular","./app.controllers"],function(angular,controllers){
             /**/
             self.setModel("project",project);
             var projectCd=project.id;
-            $location.path("/main/"+projectCd);
+            //$location.path("/main/"+projectCd);
         };
 
         self.isActive=function(menu,model){
             return menu==model;
         };
 
-
         function _init(){
             var pid=$rootScope.pid;
-
             var curProject=undefined;
             $.each(self.projects,function(i,e){
                 if(e.projectCd==pid){
@@ -46,25 +44,19 @@ define(["angular","./app.controllers"],function(angular,controllers){
 
             self.setModel("project",curProject);
 
-            var plan=$rootScope.plan;
+            var type=$rootScope.type;
 
-            if(typeof plan !=="undefined"){
-                var curPlan=undefined;
-                $.each(self.plans,function(i,e){
-                    if(e.id==plan){
-                        curPlan=e;
+            if(typeof type !=="undefined"){
+                var type=undefined;
+                $.each(self.types,function(i,e){
+                    if(e.id==type){
+                        curType=e;
                     }
                 });
-                self.setModel("plan",curPlan);
-
-                /*todo: render project 时需要typeList数据*/
-                $rootScope.typeList=self.typeList;
-                /*这里把业态映射 放到全局访问*/
-                $rootScope.plan=curPlan;
+                self.setModel("type",curType);
             }else{
-
-                //如果无计划节点时，激活显示计划节点
-                $("#dropdown-plan").dropdown("toggle");
+                //如果无项目时，激活显示项目列表
+                //$("#js-menu-project").dropdown("toggle");
             }
         }
 

@@ -3,6 +3,7 @@
  */
 define(["js/app"],
     function(app) {
+        console.log(app);
         return app.run([
             '$rootScope',
             '$state',
@@ -117,7 +118,7 @@ define(["js/app"],
 
                                  return dataMenuService.getData(search);
                              },
-                            projectData: function(dataProjectService,$stateParams,$rootScope) {
+                            projectData: function(dataNodeService,$stateParams,$rootScope) {
                                 var plan=$stateParams.plan;
                                 $rootScope.plan=plan;
                                 //all代表过滤1:全部 0:未完成
