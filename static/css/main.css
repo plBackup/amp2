@@ -348,6 +348,8 @@ ul.amp-shop-wrapper>li.active{background-color:rgba(245,140,75,.15) !important;b
     padding-left:18px;font-size:12.8px;color:#8491a2;}
 .chart-legend-item>em.color-label{position:absolute;top:50%;margin-top:-6.4px;left:0;display: block;width:12.8px;height:12.8px;background-color:#8592a3;}
 
+em.amp-chart-unit{display: block;position: absolute;
+    font-size:12px;color:#8491a2;top:0;left:15px;}
 /*amp-section-right*/
 .amp-section-right{}
 .amp-section-right .amp-panel{}
