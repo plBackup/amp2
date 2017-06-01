@@ -303,9 +303,9 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 }
 /*amp-block-floor*/
 .amp-block{}
-#amp-block-floor{position:relative;padding-right:316px;min-height:350px;border:solid 1px #dae1e7;background-color:#fff;}
+#amp-block-floor{position:relative;padding-right:326px;min-height:350px;border:solid 1px #dae1e7;background-color:#fff;}
 #amp-block-floor .amp-section-left{width:100%;border-right:solid 1px #dae1e7;}
-#amp-block-floor .amp-section-right{position:absolute;top:0;right:1px;width:316px;height:100%;border-left:solid 1px #dae1e7;background-color: #fcfcfc;
+#amp-block-floor .amp-section-right{position:absolute;top:0;right:1px;width:326px;height:100%;border-left:solid 1px #dae1e7;background-color: #fcfcfc;
     overflow: hidden;overflow-y: auto;}
 
 #amp-block-floor .amp-section-content{padding:40px 25px;}

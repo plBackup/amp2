@@ -74,7 +74,7 @@ define(["angular","./app.services"],function(angular,services){
                         },
                         grid:{
                             top:30,
-                            left:80,
+                            left:50,
                             right:30,
                             bottom:50
                         },
@@ -162,7 +162,7 @@ define(["angular","./app.services"],function(angular,services){
                             axisLabel:{
                                 show:true,
                                 formatter:'{value}',
-                                margin:15,
+                                margin:10,
                                 textStyle:{
                                     color:"#666",
                                     fontStyle:"normal",
