@@ -382,7 +382,12 @@ em.amp-chart-unit{display: block;position: absolute;
     margin: 0;
     width: 100%;
 }
-
+.icon-arrow-left:before {
+    content: "\e091";
+}
+.icon-arrow-right:before {
+    content: "\e092";
+}
 /*page blank*/
 .blank>h3{position: absolute;top:50%;left:50%;margin-top:-75px;margin-left:-75px;
     width:150px;height:150px;padding-top:80px;
