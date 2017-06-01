@@ -45,7 +45,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
         };
 
         self.getItemWidth=function(area){
-            var w=area+"px"
+            var w=area+"px";
             return {"width":w}
         };
 

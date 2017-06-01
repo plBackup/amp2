@@ -9,8 +9,6 @@ define(["angular","./app.filters"],function(angular,filters){
                 return data;
             }else{
                 if(typeof data==="undefined" || data==""||data==null){
-                    console.log("data-------");
-                    console.log(data)
                     return str;
                 }
                 return data;
