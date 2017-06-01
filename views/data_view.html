@@ -64,7 +64,8 @@
                     <div id="collapse-{{$index}}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul class="amp-shop-wrapper clearfix">
-                                <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}">
+                                <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}"
+                                    ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true}">
                                     <div class="shop-item-info">
                                         <h5>{{dCtrl.getShopName(shop)}}</h5>
                                         <span>{{shop.name}}</span>
