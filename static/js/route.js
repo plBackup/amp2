@@ -88,6 +88,9 @@ define(["js/app"],
                                 //return dataProjectService.getData(search);
                                 return dataProjectService.getData();
                             },
+                            floorsData: function(dataFloorsService,$stateParams,$rootScope) {
+                                return dataFloorsService.getData();
+                            },
                         }
             })
 
