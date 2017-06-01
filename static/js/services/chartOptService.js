@@ -76,7 +76,7 @@ define(["angular","./app.services"],function(angular,services){
                             top:30,
                             left:50,
                             right:30,
-                            bottom:50
+                            bottom:30
                         },
                         xAxis:{
                             position:"bottom",

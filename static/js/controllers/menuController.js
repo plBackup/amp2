@@ -42,6 +42,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
             console.log(data);
             self.menuFilter.date=data.date.split("-");
             console.log(self.curDate);
+            console.log(self.menuFilter);
         };
 
 
@@ -59,7 +60,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
             var pid=$rootScope.pid;
             var curProject=undefined;
             $.each(self.projects,function(i,e){
-                if(e.projectCd==pid){
+                if(e.id==pid){
                     curProject=e;
                 }
             });
