@@ -3,7 +3,7 @@
  */
 define(["angular","./app.controllers"],function(angular,controllers){
 
-    controllers.controller("dataCtrl",["$rootScope","$scope","$http","dataProjectService","projectData","floorsData","$timeout",function($rootScope,$scope,$http,dataProjectService,projectData,floorsData,$timeout){
+    controllers.controller("dataCtrl",["$rootScope","$scope","$http","dataFloorDetailService","dataShopDetailService","projectData","floorsData","$timeout",function($rootScope,$scope,$http,dataFloorDetailService,dataShopDetailService,projectData,floorsData,$timeout){
 
         var self=this;
         console.log("project Data==============================");
@@ -16,12 +16,18 @@ define(["angular","./app.controllers"],function(angular,controllers){
             return shop.shopNames.join(",")
         };
 
-        self.init=function(){
+        self.getFloorInfo=function(floorId){
+            console.log(floorId);
+        };
+        self.getShopInfo=function(shopId){
+            console.log(shopId);
+        }
 
+
+        self.init=function(){
             $timeout(function(){
                 $("[data-toggle='tooltip']").tooltip();
             },300);
-
         };
         self.init();
     }]);
