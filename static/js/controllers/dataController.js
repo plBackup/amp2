@@ -59,7 +59,15 @@ define(["angular","./app.controllers"],function(angular,controllers){
 
         self.getFloorWidth=function(floorArea){
             return (floorArea/self.baseWidth)*100;
-        }
+        };
+        var width=parseInt($(".amp-section-left").css("width"))-60-136;
+        self.hideEm=function(rental_rate,w){
+            if (w*rental_rate/10000*width<50){
+                return true;
+            }else{
+                return false;
+            }
+        };
         self.init=function(){
 
             $.each(self.floorsData,function(i,floor){
