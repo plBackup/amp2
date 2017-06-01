@@ -16,8 +16,8 @@ define(["angular","./app.controllers"],function(angular,controllers){
         self.floorInfo=undefined;
         self.shopInfo=undefined;
 
-        self.getShopName=function(shop){
-            return shop.shopNames.join(",")
+        self.getShopName=function(shopNames){
+            return shopNames.join(",")
         };
 
         /*get set floorInfo*/

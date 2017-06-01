@@ -7,6 +7,7 @@
   "retailing_form":"餐饮",
   "cur_form":"餐饮",
   "shop_type":"大租户",
+  "rental_type":"委托经营",
   "leasing_range": {
     "start_date": [
       2016,
@@ -24,23 +25,23 @@
   "all_rantal":null,
   "arrearage":{
         "count":16800,
-        "linke":"-"
+        "link":"-"
     },
-  "contract":[
+  "contracts":[
       {
         "id":"ld_01F101",
         "name":"LD-01F101",
         "link":""
       }
     ],
-  "rental_intention":[
+  "rental_intentions":[
       {
         "id":"10158",
         "name":"10158",
         "link":""
       }
     ],
-  "contract_approval":[
+  "contract_approvals":[
       {
         "id":"10296",
         "name":"10296",

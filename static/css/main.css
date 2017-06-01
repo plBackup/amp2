@@ -73,7 +73,8 @@ a:focus{ -webkit-box-shadow:none;box-shadow:none;}
 }
 /*body*/
 
-
+a.amp-link,a.amp-link:hover,a.amp-link:active{color:#5ab46e;}
+a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe012d;}
 /*input- addon */
 /*
 <div class="input-addon input-checkbox-addon">
@@ -366,7 +367,7 @@ ul.amp-shop-wrapper>li.active{background-color:rgba(245,140,75,.15) !important;b
 
 .amp-section-right .amp-table-noborder tbody>tr>th,
 .amp-section-right .amp-table-noborder tbody>tr>td{padding-left:15px;font-size:12.8px;}
-.amp-section-right .amp-table-noborder tbody>tr>th{color:#8491a2;}
+.amp-section-right .amp-table-noborder tbody>tr>th{color:#8491a2;padding-right:0;}
 .amp-section-right .amp-table-noborder tbody>tr>td{color:#333;}
 /*menu-view*/
 .datetimepicker {

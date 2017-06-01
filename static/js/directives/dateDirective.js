@@ -15,7 +15,7 @@ define(["angular","./app.directives"],function(angular,directives){
                 require:"ngModel",
 
                 template: '<div class="input-group date ys-datepicker">'+
-                            '<input size="16" type="text" value="" data-provide="datepicker" name="date- {{dateDirectiveName}}'+
+                            '<input size="16" type="text" value="" data-provide="datepicker" name="date-{{dateDirectiveName}}'+
                             '" id="date-{{dateDirectiveName}}'+
                             '">' +
                             '</div>',

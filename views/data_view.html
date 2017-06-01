@@ -61,10 +61,10 @@
                         <div class="panel-body">
                             <ul class="amp-shop-wrapper clearfix">
                                 <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}" ng-click="dCtrl.getShopInfo(shop.id)"
-                                    data-toggle="tooltip" data-placement="top" title="{{shop.name+':'+dCtrl.getShopName(shop)}}"
+                                    data-toggle="tooltip" data-placement="top" title="{{shop.name+':'+dCtrl.getShopName(shop.shopNames)}}"
                                     ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true}">
                                     <div class="shop-item-info">
-                                        <h5>{{dCtrl.getShopName(shop)}}</h5>
+                                        <h5>{{dCtrl.getShopName(shop.shopNames)}}</h5>
                                         <span>{{shop.name}}</span>
                                     </div>
                                 </li>
@@ -95,11 +95,16 @@
             </div>
         </div>
 
-        <div class="amp-panel amp-panel-project" ng-show="dCtrl.floorInfoShow && dCtrl.floorInfo!=undefined">
+        <div class="amp-panel amp-panel-project" ng-if="dCtrl.floorInfo!=undefined" ng-show="dCtrl.floorInfoShow">
             <div class="amp-panel-title">
                 <h3>L3</h3>
                 <div class="amp-table-wrapper">
                     <table class="table table-right-bordered amp-table">
+                        <colgroup>
+                            <col width="40%">
+                            <col width="30%">
+                            <col width="30%">
+                        </colgroup>
                         <thead>
                         <tr>
                             <th>可出租面积(m&sup2)</th>
@@ -116,7 +121,7 @@
                                 <h3 class="ng-binding">{{dCtrl.floorInfo.shop_num}}</h3>
                             </td>
                             <td>
-                                <h3 class="ng-binding">{{dCtrl.floorInfo.rental_rate|number:2}}%</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.rental_rate|number:0}}%</h3>
                             </td>
                         </tr>
                         </tbody>
@@ -157,11 +162,11 @@
                         <tbody>
                         <tr>
                             <th>欠费</th>
-                            <td><a href="dCtrl.floorInfo.arrearage.link">{{dCtrl.floorInfo.arrearage.num}}</a></td>
+                            <td><a href="{{dCtrl.floorInfo.arrearage.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.arrearage.num}}个商家</a></td>
                         </tr>
                         <tr>
                             <th>到期</th>
-                            <td><a href="dCtrl.floorInfo.lease_expires.link">{{dCtrl.floorInfo.lease_expires.num}}</a></td>
+                            <td><a href="{{dCtrl.floorInfo.lease_expires.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.lease_expires.num}}个商家</a></td>
                         </tr>
 
                         </tbody><!--tbody-->
@@ -177,11 +182,15 @@
                 </div>-->
             </div>
         </div>
-        <div class="amp-panel amp-panel-shop" ng-show="!dCtrl.floorInfoShow && dCtrl.shopInfo!=undefined">
+        <div class="amp-panel amp-panel-shop" ng-if="dCtrl.shopInfo!=undefined" ng-show="!dCtrl.floorInfoShow">
             <div class="amp-panel-title">
-                <h3>小南国</h3>
+                <h3>{{dCtrl.shopInfo.name}}</h3>
                 <div class="amp-table-wrapper">
                     <table class="table table-right-bordered amp-table">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
                         <thead>
                         <tr>
                             <th>店铺号</th>
@@ -192,10 +201,10 @@
                         <tbody>
                         <tr class="tr-info-main">
                             <td>
-                                <h3 class="ng-binding">301</h3>
+                                <h3 class="ng-binding">{{dCtrl.getShopName(dCtrl.shopInfo.shopNames)}}</h3>
                             </td>
                             <td>
-                                <h3 class="ng-binding">1,500</h3>
+                                <h3 class="ng-binding">{{dCtrl.shopInfo.shop_area|number:2}}</h3>
                             </td>
 
                         </tr>
@@ -208,65 +217,65 @@
                 <div class="amp-table-wrapper">
                     <table class="table amp-table amp-table-noborder">
                         <colgroup>
-                            <col width="30%">
-                            <col width="70%">
+                            <col width="35%">
+                            <col width="65%">
                         </colgroup>
                         <tbody>
                         <tr>
                             <th>签批业态</th>
-                            <td>餐饮</td>
+                            <td>{{dCtrl.shopInfo.retailing_form}}</td>
                         </tr>
                         <tr>
                             <th>当前业态</th>
-                            <td>餐饮</td>
+                            <td>{{dCtrl.shopInfo.cur_form}}</td>
                         </tr>
                         <tr>
                             <th>铺位类型</th>
-                            <td>委托经营</td>
+                            <td>{{dCtrl.shopInfo.rental_type}}</td>
                         </tr>
                         <tr>
                             <th>商铺定位</th>
-                            <td>大租户</td>
+                            <td>{{dCtrl.shopInfo.shop_type}}</td>
                         </tr>
                         <tr>
                             <th>商户名</th>
-                            <td>小南国</td>
+                            <td>{{dCtrl.shopInfo.name}}</td>
                         </tr>
                         <tr>
                             <th>面积</th>
-                            <td>5,554.73m&sup2</td>
+                            <td>{{dCtrl.shopInfo.shop_area|number:2}}m&sup2</td>
                         </tr>
                         <tr>
                             <th>租期</th>
-                            <td>10年0个月0天</td>
+                            <td>{{dCtrl.shopInfo.leasing_range.range}}</td>
                         </tr>
                         <tr>
                             <th>单价(标准)</th>
-                            <td>0.4元/m&sup2/天</td>
+                            <td>{{dCtrl.shopInfo.avg_rental|number:2}}元/m&sup2/天</td>
                         </tr>
 
                         <tr>
                             <th>总额</th>
-                            <td>-元</td>
+                            <td>{{dCtrl.shopInfo.all_rental|number:2|default:"-"}}元</td>
                         </tr>
                         <tr>
                             <th>欠费总额</th>
-                            <td>-元</td>
+                            <td><a href="{{dCtrl.shopInfo.arrearage.link}}" class="amp-link amp-link-warning">{{dCtrl.shopInfo.arrearage.count|number:2|default:"-"}}</a>元</td>
                         </tr>
                         </tbody><!--tbody-->
 
                         <tbody>
                         <tr>
                             <th>租赁合同</th>
-                            <td><a href="#">LD-03F301</a></td>
+                            <td><a href="{{contract.link}}" ng-repeat="contract in dCtrl.shopInfo.contracts" class="amp-link">{{contract.name}}</a></td>
                         </tr>
                         <tr>
                             <th>租赁意向审批表</th>
-                            <td><a href="#">10158</a></td>
+                            <td><a href="{{intention.link}}" ng-repeat="intention in dCtrl.shopInfo.rental_intentions" class="amp-link">{{intention.name}}</a></td>
                         </tr>
                         <tr>
                             <th>合同审批表</th>
-                            <td><a href="#">10296</a></td>
+                            <td><a href="{{approval.link}}" ng-repeat="approval in dCtrl.shopInfo.contract_approvals" class="amp-link">{{approval.name}}</a></td>
                         </tr>
                         </tbody><!--tbody-->
                     </table>
