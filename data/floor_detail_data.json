@@ -17,33 +17,5 @@
   "lease_expires":{
       "num":3,
       "link":""
-  },
-  "chart": [
-    {
-      "values": [
-        "2016",
-        "2017",
-        "2018"
-      ],
-      "name": "year"
-    },
-    {
-      "values": [
-        0
-      ],
-      "name": "实收"
-    },
-    {
-      "values": [
-        0,null,null
-      ],
-      "name": "应收"
-    },
-    {
-      "values": [
-        0,null,null
-      ],
-      "name": "租金包"
-    }
-  ]
+  }
 }

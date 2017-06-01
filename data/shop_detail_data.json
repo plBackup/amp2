@@ -7,36 +7,72 @@
   "retailing_form":"餐饮",
   "cur_form":"餐饮",
   "shop_type":"大租户",
-  "leasing_range":{
-    "start_date":[2016,5,12],
-    "end_date":[2026,5,12],
-    "range":"10年0个月0天",
-    "avg_rental":7,
-    "all_rantal":null,
-    "arrearage":{
+  "leasing_range": {
+    "start_date": [
+      2016,
+      5,
+      12
+    ],
+    "end_date": [
+      2026,
+      5,
+      12
+    ],
+    "range": "10年0个月0天"
+  },
+  "avg_rental":7,
+  "all_rantal":null,
+  "arrearage":{
         "count":16800,
         "linke":"-"
     },
-    "contract":[
+  "contract":[
       {
         "id":"ld_01F101",
         "name":"LD-01F101",
         "link":""
       }
     ],
-    "rental_intention":[
+  "rental_intention":[
       {
         "id":"10158",
         "name":"10158",
         "link":""
       }
     ],
-    "contract_approval":[
+  "contract_approval":[
       {
         "id":"10296",
         "name":"10296",
         "link":""
       }
-    ]
-  }
+    ],
+  "chart": [
+    {
+      "values": [
+        "2016",
+        "2017",
+        "2018"
+      ],
+      "name": "year"
+    },
+    {
+      "values": [
+        0
+      ],
+      "name": "实收"
+    },
+    {
+      "values": [
+        0,null,null
+      ],
+      "name": "应收"
+    },
+    {
+      "values": [
+        0,null,null
+      ],
+      "name": "租金包"
+    }
+  ]
 }
