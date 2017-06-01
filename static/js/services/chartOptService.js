@@ -139,7 +139,7 @@ define(["angular","./app.services"],function(angular,services){
                              fontSize:14
                              },*/
                             min:0,
-                            max:"auto",
+                            //max:"auto",
                             //splitNumber:7,
                             axisLine:{
                                 show:false,

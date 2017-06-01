@@ -1,21 +1,22 @@
 {
-  "id":"floor_01",
-  "name":"L1",
-  "floor_area":2200,
-  "rentable_area":1980,
-  "rental_rate":100,
-  "shop_num":14,
-  "open_rate":100,
-  "open_num":14,
-  "avg_rental":7.00,
+  "id":"floor_A2A4-1",
+  "name":"A2A4-1",
+  "floor_area":7600.94,
+  "rentable_area":4543.27,
+  "rental_rate":59.60,
+  "shop_num":39,
+  "open_rate":48.71,
+  "open_num":19,
+  "avg_rental":1.80,
   "rental_income":13860.00,
-  "manage_fee":5266.80,
+  "manage_fee":29958.25,
   "arrearage":{
       "num":5,
+      "count":624.00,
       "link":""
   },
   "lease_expires":{
-      "num":3,
+      "num":5,
       "link":""
   }
 }

@@ -12,9 +12,14 @@ define(["angular","./app.controllers"],function(angular,controllers){
         self.projectData=angular.copy(projectData);
         self.floorsData=angular.copy(floorsData);
 
+        self.curFloorId=undefined;
+        self.curShopId=undefined;
+
         self.floorInfoShow=true;
         self.floorInfo=undefined;
         self.shopInfo=undefined;
+
+        self.baseWidth=0;
 
         self.getShopName=function(shopNames){
             return shopNames.join(",")
@@ -25,6 +30,8 @@ define(["angular","./app.controllers"],function(angular,controllers){
             console.log(floorId);
             self.floorInfoShow=true;
             var search=floorId;
+            self.curShopId=undefined;
+            self.curFloorId=floorId;
             dataFloorDetailService.getData(search,self.setFloorInfo);
         };
         self.setFloorInfo=function(data){
@@ -37,6 +44,7 @@ define(["angular","./app.controllers"],function(angular,controllers){
             console.log(shopId);
             self.floorInfoShow=false;
             var search=shopId;
+            self.curShopId=shopId;
             dataShopDetailService.getData(search,self.setShopInfo);
         };
         self.setShopInfo=function(data){
@@ -49,9 +57,26 @@ define(["angular","./app.controllers"],function(angular,controllers){
             return {"width":w}
         };
 
+        self.getFloorWidth=function(floorArea){
+            return (floorArea/self.baseWidth)*100;
+        }
         self.init=function(){
+
+            $.each(self.floorsData,function(i,floor){
+                if(self.baseWidth<floor.floor_area){
+                    self.baseWidth=floor.floor_area;
+                }
+            });
+            console.log(self.baseWidth);
+
+            $.each(self.floorsData,function(i,floor){
+               floor.w=self.getFloorWidth(floor.floor_area);
+            });
+
             $timeout(function(){
-                $("[data-toggle='tooltip']").tooltip();
+                $("[data-toggle='tooltip']").tooltip({
+                    html:true
+                });
             },300);
         };
         self.init();

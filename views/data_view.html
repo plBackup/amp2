@@ -45,8 +45,9 @@
                             </div><!--floor title-->
 
 
-                            <div class="amp-floor-area">
-                                <div class="amp-floor-rented" ng-style="{'width':floor.rental_rate+'%'}">
+                            <div class="amp-floor-area" ng-style="{'width':(floor.w||0)+'%'}" ng-class="{'active':floor.id==dCtrl.curFloorId}">
+                                <div class="amp-floor-rented" ng-style="{'width':floor.rental_rate+'%'}"
+                                     data-toggle="tooltip" data-placement="top" title="{{'已出租面积:'+floor.rental_area+'m&sup2'+'<br/>出租率:'+floor.rental_rate+'%'}}">
                                     <div class="floor-rented-info clearfix" >
                                         <em class="amp-rented-area pull-left">{{floor.rental_area|number:0}}m&sup2</em>
                                         <em class="amp-rented-rate pull-right">{{floor.rental_rate|number:2}}%</em>
@@ -64,7 +65,7 @@
                                     data-toggle="tooltip" data-placement="top" title="{{shop.name+':'+dCtrl.getShopName(shop.shopNames)}}"
 
                                     ng-style="dCtrl.getItemWidth(shop.shop_area)"
-                                    ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true}">
+                                    ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true,'active':shop.id==dCtrl.curShopId}">
                                     <div class="shop-item-info" >
                                         <h5>{{dCtrl.getShopName(shop.shopNames)}}</h5>
                                         <span>{{shop.name}}</span>
@@ -99,7 +100,7 @@
 
         <div class="amp-panel amp-panel-project" ng-if="dCtrl.floorInfo!=undefined" ng-show="dCtrl.floorInfoShow">
             <div class="amp-panel-title">
-                <h3>L3</h3>
+                <h3>{{dCtrl.floorInfo.name}}</h3>
                 <div class="amp-table-wrapper">
                     <table class="table table-right-bordered amp-table">
                         <colgroup>
@@ -117,13 +118,13 @@
                         <tbody>
                         <tr class="tr-info-main">
                             <td>
-                                <h3 class="ng-binding">{{dCtrl.floorInfo.floor_area|number:0}}</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.floor_area|number:2}}</h3>
                             </td>
                             <td>
                                 <h3 class="ng-binding">{{dCtrl.floorInfo.shop_num}}</h3>
                             </td>
                             <td>
-                                <h3 class="ng-binding">{{dCtrl.floorInfo.rental_rate|number:0}}%</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.rental_rate|number:2}}%</h3>
                             </td>
                         </tr>
                         </tbody>
@@ -141,34 +142,34 @@
                         <tbody>
                         <tr>
                             <th>开业商户</th>
-                            <td>{{dCtrl.floorInfo.open_num}}个</td>
+                            <td>{{dCtrl.floorInfo.open_num}}<em class="em-unit">个</em></td>
                         </tr>
                         <tr>
                             <th>开业率</th>
-                            <td>{{dCtrl.floorInfo.open_rate}}%</td>
+                            <td>{{dCtrl.floorInfo.open_rate}}<em class="em-unit">%</em></td>
                         </tr>
                         <tr>
                             <th>平均租金</th>
-                            <td>{{dCtrl.floorInfo.avg_rental}}元/m&sup2/天</td>
+                            <td>{{dCtrl.floorInfo.avg_rental}}<em class="em-unit">元/m&sup2/天</em></td>
                         </tr>
                         <tr>
                             <th>租金</th>
-                            <td>{{dCtrl.floorInfo.rental_income|number:2}}</td>
+                            <td>{{dCtrl.floorInfo.rental_income|number:2}}<em class="em-unit">元</em></td>
                         </tr>
                         <tr>
                             <th>物管</th>
-                            <td>{{dCtrl.floorInfo.manage_fee|number:2}}</td>
+                            <td>{{dCtrl.floorInfo.manage_fee|number:2}}<em class="em-unit">元</em></td>
                         </tr>
                         </tbody><!--tbody-->
 
                         <tbody>
                         <tr>
                             <th>欠费</th>
-                            <td><a href="{{dCtrl.floorInfo.arrearage.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.arrearage.num}}个商家</a></td>
+                            <td><a href="{{dCtrl.floorInfo.arrearage.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.arrearage.count}}<em class="em-unit">万元</em></a></td>
                         </tr>
                         <tr>
                             <th>到期</th>
-                            <td><a href="{{dCtrl.floorInfo.lease_expires.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.lease_expires.num}}个商家</a></td>
+                            <td><a href="{{dCtrl.floorInfo.lease_expires.link}}" class="amp-link amp-link-warning">{{dCtrl.floorInfo.lease_expires.num}}<em class="em-unit">个商家</em></a></td>
                         </tr>
 
                         </tbody><!--tbody-->
@@ -284,9 +285,9 @@
                 </div><!--amp-table-wrapper-->
 
                 <div class="amp-chart-wrapper" id="rent-chart-wrapper" style="margin-top:20px;padding-left:0;padding-right:0;position:relative;">
-                    <div id="amp-rent-chart" style="height:310px;"
+                    <div id="amp-rent-chart" style="height:280px;"
                          rent-chart chart-data="dCtrl.shopInfo.chart"></div>
-                    <div class="chart-legend">
+                    <div class="chart-legend" style="padding-left:0; text-align: center;">
                         <span class="chart-legend-item"><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">应收</i></span>
                         <span class="chart-legend-item"><em class="color-label" style="background-color:#ea7444;"></em><i class="name">实收</i></span>
                         <span class="chart-legend-item"><em class="color-label" style="background-color:#1abd9d;"></em><i class="name">租金包</i></span>

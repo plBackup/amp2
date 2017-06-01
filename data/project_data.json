@@ -1,9 +1,9 @@
 {
   "id":"pid_01",
   "name":"项目1",
-  "area":18600,
+  "area":305907.20,
   "rental_rate":90,
-  "rentable_area":16600,
-  "shop_num":128,
-  "avg_rental":6.2
+  "rentable_area":67026,
+  "shop_num":289,
+  "avg_rental":1.08
 } 

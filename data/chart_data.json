@@ -2,27 +2,27 @@
   "chart": [
     {
       "values": [
-        "2016",
         "2017",
-        "2018"
+        "2018",
+        "2019"
       ],
       "name": "year"
     },
     {
       "values": [
-        0
+        0,null,null
       ],
       "name": "实收"
     },
     {
       "values": [
-        0,null,null
+        150000,16000,17000
       ],
       "name": "应收"
     },
     {
       "values": [
-        0,null,null
+        15000,15000,15000
       ],
       "name": "租金包"
     }
