@@ -36,24 +36,24 @@
     <div class="amp-section amp-section-left">
         <div class="amp-section-content">
             <div class="panel-group" id="amp-accordion" >
-                <div class="panel panel-default" ng-repeat="(floor,forms) in rfCtrl.area_arrange track by $index" id="panel-1" cur-floor="{{floor}}" set-pop-temp="rfCtrl.setPopoverTemp(floor,type)"  ng-model="rfCtrl.floorsNum" drag-drop>
-                    <div class="panel-heading" id="heading-1" ng-model="rfCtrl.popoverTemp">
-                        <div class="panel-title collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
+                <div class="panel panel-default" ng-repeat="floor in dCtrl.floorsData track by $index" id="panel-{{$index}}">
+                    <div class="panel-heading" id="heading-{{$index}}">
+                        <div class="panel-title collapsed" data-toggle="collapse" data-parent="#amp-accordion" data-fid="{{floor.id}}" href="#collapse-{{$index}}">
                             <div class="amp-floor-title">
                                 <!-- <button class="amp-accordion-btn collapsed" data-toggle="collapse" data-parent="#amp-accordion" href="#collapse-1">
                                      L4&lt;!&ndash;<em class="ys-icon icon-menu-down"></em>&ndash;&gt;
                                      <em class="amp-area-addon">2,200m&sup2</em>
                                  </button>-->
-                                <h5>L4</h5>
-                                <em class="amp-area-addon">2,200m&sup2</em>
+                                <h5>{{floor.name}}</h5>
+                                <em class="amp-area-addon">{{floor.floor_area|number:0}}m&sup2</em>
                             </div><!--floor title-->
 
 
                             <div class="amp-floor-area">
                                 <div class="amp-floor-rented" style="width:70%">
                                     <div class="floor-rented-info clearfix">
-                                        <em class="amp-rented-area pull-left">1,980m&sup2</em>
-                                        <em class="amp-rented-rate pull-right">90%</em>
+                                        <em class="amp-rented-area pull-left">{{floor.rental_area|number:0}}m&sup2</em>
+                                        <em class="amp-rented-rate pull-right">{{floor.rental_rate|number:2}}%</em>
                                     </div>
                                 </div>
 
@@ -61,13 +61,13 @@
 
                         </div>
                     </div>
-                    <div id="collapse-1" class="panel-collapse collapse">
+                    <div id="collapse-{{$index}}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul class="amp-shop-wrapper clearfix">
-                                <li class="amp-shop-item">
+                                <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}">
                                     <div class="shop-item-info">
-                                        <h5>301</h5>
-                                        <span>小南国</span>
+                                        <h5>{{dCtrl.getShopName(shop)}}</h5>
+                                        <span>{{shop.name}}</span>
                                     </div>
                                 </li>
                             </ul>

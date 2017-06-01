@@ -11,6 +11,10 @@ define(["angular","./app.controllers"],function(angular,controllers){
         console.log(floorsData);
         self.projectData=angular.copy(projectData);
         self.floorsData=angular.copy(floorsData);
+
+        self.getShopName=function(shop){
+            return shop.shopNames.join(",")
+        }
     }]);
 
     //return controllers;

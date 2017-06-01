@@ -8,7 +8,7 @@
     "shops":[
       {
         "id":"c_101",
-        "name":"101",
+        "name":"小南国",
         "shopIds":["shop_101"],
         "shopNames":["101"],
         "status":"leasing",
