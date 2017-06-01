@@ -46,8 +46,8 @@
 
 
                             <div class="amp-floor-area">
-                                <div class="amp-floor-rented" style="width:70%">
-                                    <div class="floor-rented-info clearfix" ng-style="{'width':floor.rental_rate+'%',}">
+                                <div class="amp-floor-rented" ng-style="{'width':floor.rental_rate+'%'}">
+                                    <div class="floor-rented-info clearfix" >
                                         <em class="amp-rented-area pull-left">{{floor.rental_area|number:0}}m&sup2</em>
                                         <em class="amp-rented-rate pull-right">{{floor.rental_rate|number:2}}%</em>
                                     </div>
@@ -63,7 +63,7 @@
                                 <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}" ng-click="dCtrl.getShopInfo(shop.id)"
                                     data-toggle="tooltip" data-placement="top" title="{{shop.name+':'+dCtrl.getShopName(shop.shopNames)}}"
                                     ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true}">
-                                    <div class="shop-item-info" ng-style="width:{{}}">
+                                    <div class="shop-item-info" >
                                         <h5>{{dCtrl.getShopName(shop.shopNames)}}</h5>
                                         <span>{{shop.name}}</span>
                                     </div>
