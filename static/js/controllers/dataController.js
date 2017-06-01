@@ -14,7 +14,16 @@ define(["angular","./app.controllers"],function(angular,controllers){
 
         self.getShopName=function(shop){
             return shop.shopNames.join(",")
-        }
+        };
+
+        self.init=function(){
+
+            $timeout(function(){
+                $("[data-toggle='tooltip']").tooltip();
+            },300);
+
+        };
+        self.init();
     }]);
 
     //return controllers;

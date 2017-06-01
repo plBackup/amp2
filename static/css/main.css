@@ -328,7 +328,7 @@ a:focus{ -webkit-box-shadow:none;box-shadow:none;}
 
 ul.amp-shop-wrapper{padding:0;margin:0;list-style: none;}
 ul.amp-shop-wrapper>li{min-width:10px;float:left;background-color:rgba(133,146,163,.15);border:solid 1px #8592a3;
-    height:45px;line-height: 45px;cursor:pointer;}
+    height:45px;line-height: 45px;cursor:pointer;position:relative;}
 .shop-item-info{width:100%;padding:0 10px;line-height:43px;/*min-width:186px;*/overflow: hidden;}
 .shop-item-info>h5{margin:0;font-size:12.8px;line-height: 20px;color:#333;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .shop-item-info>span{display: block;font-size:12.8px;line-height:18px;color:#8491a2;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }

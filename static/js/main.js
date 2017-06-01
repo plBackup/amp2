@@ -7,6 +7,7 @@ requirejs.config({
     paths: {
         jquery:"dist/js/jquery",
         "jquery.bootstrap": "dist/js/bootstrap.min",
+        "jquery.tooltip":"",
         "jquery.datetimepicker": "dist/js/bootstrap-datetimepicker",
         "jquery.datetimepicker.zh": "dist/js/locales/bootstrap-datetimepicker.zh-CN",
         "angular":"dist/js/angular.min",
