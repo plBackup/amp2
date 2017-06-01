@@ -62,6 +62,8 @@
                             <ul class="amp-shop-wrapper clearfix">
                                 <li class="amp-shop-item" ng-repeat="shop in floor.shops" data-sid="{{shop.id}}" ng-click="dCtrl.getShopInfo(shop.id)"
                                     data-toggle="tooltip" data-placement="top" title="{{shop.name+':'+dCtrl.getShopName(shop.shopNames)}}"
+
+                                    ng-style="dCtrl.getItemWidth(shop.shop_area)"
                                     ng-class="{'shop-status-rented':shop.status=='leasing','shop-status-expired':shop.status=='expired','shop-status-arrearage':shop.warning==true}">
                                     <div class="shop-item-info" >
                                         <h5>{{dCtrl.getShopName(shop.shopNames)}}</h5>

@@ -9,6 +9,7 @@
       {
         "id":"c_101",
         "name":"小南国",
+        "shop_area":554.73,
         "shopIds":["shop_101"],
         "shopNames":["101"],
         "status":"leasing",

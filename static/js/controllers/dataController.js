@@ -44,6 +44,11 @@ define(["angular","./app.controllers"],function(angular,controllers){
             self.shopInfo=data;
         };
 
+        self.getItemWidth=function(area){
+            var w=area+"px"
+            return {"width":w}
+        };
+
         self.init=function(){
             $timeout(function(){
                 $("[data-toggle='tooltip']").tooltip();
