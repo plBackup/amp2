@@ -104,19 +104,19 @@
                         <tr>
                             <th>可出租面积(m&sup2)</th>
                             <th>铺位数(个)</th>
-                            <th>开业率</th>
+                            <th>出租率</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr class="tr-info-main">
                             <td>
-                                <h3 class="ng-binding">2,700</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.floor_area|number:0}}</h3>
                             </td>
                             <td>
-                                <h3 class="ng-binding">14</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.shop_num}}</h3>
                             </td>
                             <td>
-                                <h3 class="ng-binding">100%</h3>
+                                <h3 class="ng-binding">{{dCtrl.floorInfo.rental_rate|number:2}}%</h3>
                             </td>
                         </tr>
                         </tbody>
@@ -134,34 +134,34 @@
                         <tbody>
                         <tr>
                             <th>开业商户</th>
-                            <td>0个</td>
+                            <td>{{dCtrl.floorInfo.open_num}}个</td>
                         </tr>
                         <tr>
-                            <th>出租率</th>
-                            <td>100%</td>
+                            <th>开业率</th>
+                            <td>{{dCtrl.floorInfo.open_rate}}%</td>
                         </tr>
                         <tr>
                             <th>平均租金</th>
-                            <td>7元/m&sup2/天</td>
+                            <td>{{dCtrl.floorInfo.avg_rental}}元/m&sup2/天</td>
                         </tr>
                         <tr>
                             <th>租金</th>
-                            <td></td>
+                            <td>{{dCtrl.floorInfo.rental_income|number:2}}</td>
                         </tr>
                         <tr>
                             <th>物管</th>
-                            <td></td>
+                            <td>{{dCtrl.floorInfo.manage_fee|number:2}}</td>
                         </tr>
                         </tbody><!--tbody-->
 
                         <tbody>
                         <tr>
                             <th>欠费</th>
-                            <td>－</td>
+                            <td><a href="dCtrl.floorInfo.arrearage.link">{{dCtrl.floorInfo.arrearage.num}}</a></td>
                         </tr>
                         <tr>
                             <th>到期</th>
-                            <td>－</td>
+                            <td><a href="dCtrl.floorInfo.lease_expires.link">{{dCtrl.floorInfo.lease_expires.num}}</a></td>
                         </tr>
 
                         </tbody><!--tbody-->
