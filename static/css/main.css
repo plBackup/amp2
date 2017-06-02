@@ -314,16 +314,17 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 #amp-block-floor .panel-group .panel+.panel{margin-top:8px;}
 #amp-block-floor .panel>.panel-heading{position:relative;padding:0;padding-left:138px;height:45px;background-color:#fff;border:0;overflow:visible;cursor:pointer;}
 
-#amp-block-floor .panel-heading .amp-floor-title{position:absolute;top:0;left:0;width:135px;height:45px;overflow: hidden;
+#amp-block-floor .panel-heading .amp-floor-title{position:absolute;top:6px;left:0;width:135px;height:45px;overflow: hidden;
     padding-right:30px; }
 .amp-floor-title:after{display:block;position:absolute;width:14px;height:14px;line-height: 14px;text-align: center;
+    font-size:14px;
     content:"\e259";
     font-family: 'Glyphicons Halflings';
     font-style: normal;
     font-weight: 400;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    top: 6px;
+    top: 1px;
     right: 15px;
     -webkit-transition: transform .3s;
     -moz-transition: transform .3s;
@@ -343,14 +344,14 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
 }
-.amp-floor-title h5{line-height: 20px;margin-top:3px;font-size:16px; color:#333;}
+.amp-floor-title h5{line-height: 16px;margin-top:0;font-size:14px; color:#333;}
 .amp-floor-title em.amp-area-addon{display: block;line-height: 20px;font-size:12px;color:#8491a2;}
 
 #amp-block-floor .panel-heading .amp-floor-area{position:relative;height:45px;background-color:#f3f4f8;border:solid 1px #dae1e7;}
 .amp-floor-area .amp-floor-rented{position: absolute;height:45px;top:-1px;left:0;overflow: hidden;
     background-color:rgba(105,220,251,.15);border:solid 1px #69dcfb;}
 #amp-block-floor .panel-heading .amp-floor-area:hover .amp-floor-rented,
-#amp-block-floor .panel-heading .amp-floor-area.active .amp-floor-rented{background-color:rgba(245,140,75,.15) !important;border:solid 1px #f58c4b !important;}
+#amp-block-floor .panel-heading .amp-floor-area.active .amp-floor-rented{background-color:rgba(245,140,75,.55) !important;border:solid 1px #f58c4b !important;}
 .amp-floor-rented .floor-rented-info{width:100%;padding:0 15px;line-height:43px;/*min-width:186px;*/overflow: hidden;}
 .amp-floor-rented .floor-rented-info>em{display: inline-block;}
 .amp-floor-rented .floor-rented-info>em.amp-rented-area{font-size:14px;color:#333;margin-right:15px;}
@@ -360,10 +361,10 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 
 ul.amp-shop-wrapper{padding:0;margin:0;list-style: none;}
 ul.amp-shop-wrapper>li{min-width:10px;float:left;background-color:rgba(133,146,163,.15);border:solid 1px #8592a3;
-    height:45px;line-height: 45px;cursor:pointer;position:relative;}
+    height:32px;line-height: 32px;cursor:pointer;position:relative;}
 .shop-item-info{width:100%;padding:0 10px;line-height:43px;/*min-width:186px;*/overflow: hidden;}
-.shop-item-info>h5{margin:0;font-size:12.8px;line-height: 20px;color:#333;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
-.shop-item-info>span{display: block;font-size:12.8px;line-height:18px;color:#8491a2;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
+.shop-item-info>h5{float:left;margin:0;margin-right:10px;font-size:12.8px;line-height: 30px;color:#333;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.shop-item-info>span{display: block;font-size:12.8px;line-height:30px;color:#8491a2;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
 
 ul.amp-shop-wrapper>li.shop-status-rented{background-color:rgba(105,220,251,.15);border:solid 1px #69dcfb;}
 ul.amp-shop-wrapper>li.shop-status-expired{background-color:rgba(250,210,78,.15);border:solid 1px #fad24c;}
