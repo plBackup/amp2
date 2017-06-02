@@ -318,14 +318,31 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
     padding-right:30px; }
 .amp-floor-title:after{display:block;position:absolute;width:14px;height:14px;line-height: 14px;text-align: center;
     content:"\e259";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
     top: 6px;
     right: 15px;
     -webkit-transition: transform .3s;
     -moz-transition: transform .3s;
     -ms-transition: transform .3s;
     -o-transition: transform .3s;
-    transition: transform .3s;}
-
+    transition: transform .3s;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.collapsed .amp-floor-title:after{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
 .amp-floor-title h5{line-height: 20px;margin-top:3px;font-size:16px; color:#333;}
 .amp-floor-title em.amp-area-addon{display: block;line-height: 20px;font-size:12px;color:#8491a2;}
 
