@@ -314,7 +314,18 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 #amp-block-floor .panel-group .panel+.panel{margin-top:8px;}
 #amp-block-floor .panel>.panel-heading{position:relative;padding:0;padding-left:138px;height:45px;background-color:#fff;border:0;overflow:visible;cursor:pointer;}
 
-#amp-block-floor .panel-heading .amp-floor-title{position:absolute;top:0;left:0;width:135px;height:45px;overflow: hidden; }
+#amp-block-floor .panel-heading .amp-floor-title{position:absolute;top:0;left:0;width:135px;height:45px;overflow: hidden;
+    padding-right:30px; }
+.amp-floor-title:after{display:block;position:absolute;width:14px;height:14px;line-height: 14px;text-align: center;
+    content:"\e259";
+    top: 6px;
+    right: 15px;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+    transition: transform .3s;}
+
 .amp-floor-title h5{line-height: 20px;margin-top:3px;font-size:16px; color:#333;}
 .amp-floor-title em.amp-area-addon{display: block;line-height: 20px;font-size:12px;color:#8491a2;}
 
