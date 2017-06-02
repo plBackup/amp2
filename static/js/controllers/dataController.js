@@ -85,6 +85,15 @@ define(["angular","./app.controllers"],function(angular,controllers){
                 $("[data-toggle='tooltip']").tooltip({
                     html:true
                 });
+
+                $('.collapse').on('hidden.bs.collapse', function () {
+                    // do something…
+                    $(".panel").removeClass("js-collapse-open");
+                });
+                $('.collapse').on('shown.bs.collapse', function () {
+                    // do something…
+                    $(".panel").addClass("js-collapse-open");
+                })
             },300);
         };
         self.init();

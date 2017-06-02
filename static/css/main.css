@@ -310,8 +310,15 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 
 #amp-block-floor .amp-section-content{padding:40px 25px;}
 #amp-block-floor .panel-group{margin-bottom:10px;}
-#amp-block-floor .panel-group .panel{border:0;border-radius:0;box-shadow:none;}
-#amp-block-floor .panel-group .panel+.panel{margin-top:8px;}
+#amp-block-floor .panel-group .panel{border:0;border-radius:0;box-shadow:none;opacity:1;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;}
+#amp-block-floor .panel-group .panel.js-collapse-open{opacity:.38;}
+#amp-block-floor .panel-group .panel.js-collapse-open.active{opacity:1;}
+#amp-block-floor .panel-group .panel+.panel{margin-top:10px;}
 #amp-block-floor .panel>.panel-heading{position:relative;padding:0;padding-left:138px;height:45px;background-color:#fff;border:0;overflow:visible;cursor:pointer;}
 
 #amp-block-floor .panel-heading .amp-floor-title{position:absolute;top:6px;left:0;width:135px;height:45px;overflow: hidden;

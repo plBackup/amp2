@@ -36,7 +36,7 @@
     <div class="amp-section amp-section-left">
         <div class="amp-section-content">
             <div class="panel-group" id="amp-accordion" >
-                <div class="panel panel-default" ng-repeat="floor in dCtrl.floorsData track by $index" id="panel-{{$index}}">
+                <div class="panel panel-default animated" ng-repeat="floor in dCtrl.floorsData track by $index" id="panel-{{$index}}" ng-class="{'active':floor.id==dCtrl.curFloorId}">
                     <div class="panel-heading" id="heading-{{$index}}" ng-click="dCtrl.getFloorInfo(floor.id)">
                         <div class="panel-title collapsed" data-toggle="collapse" data-parent="#amp-accordion" data-fid="{{floor.id}}" href="#collapse-{{$index}}">
                             <div class="amp-floor-title">
@@ -45,7 +45,7 @@
                             </div><!--floor title-->
 
 
-                            <div class="amp-floor-area" ng-style="{'width':(floor.w||0)+'%'}" ng-class="{'active':floor.id==dCtrl.curFloorId}">
+                            <div class="amp-floor-area" data-w={{floor.w||0}} ng-style="{'width':(floor.w||0)+'%'}" ng-class="{'active':floor.id==dCtrl.curFloorId}">
                                 <div class="amp-floor-rented" ng-style="{'width':floor.rental_rate+'%'}"
                                      data-toggle="tooltip" data-placement="top" title="{{'已出租面积:'+floor.rental_area+'m&sup2'+'<br/>出租率:'+floor.rental_rate+'%'}}">
                                     <div class="floor-rented-info clearfix" >
