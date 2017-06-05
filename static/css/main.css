@@ -367,17 +367,17 @@ a.amp-link-warning,a.amp-link-warning:hover,a.amp-link-warning:active{color:#fe0
 .panel-default>.panel-heading+.panel-collapse>.panel-body{padding:0;padding-left:138px;border-top:0;}
 
 ul.amp-shop-wrapper{padding:0;margin:0;list-style: none;}
-ul.amp-shop-wrapper>li{min-width:10px;max-width:100%;float:left;background-color:rgba(133,146,163,.15);border:solid 1px #8592a3;
+ul.amp-shop-wrapper>li{min-width:10px;max-width:100%;float:left;background-color:rgba(133,146,163,.15);/*border:solid 1px #8592a3;*/
     height:32px;line-height: 32px;cursor:pointer;position:relative;}
 .shop-item-info{width:100%;padding:0 10px;line-height:43px;/*min-width:186px;*/overflow: hidden;}
 .shop-item-info>h5{float:left;margin:0;margin-right:10px;font-size:12.8px;line-height: 30px;color:#333;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .shop-item-info>span{display: block;font-size:12.8px;line-height:30px;color:#8491a2;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
 
-ul.amp-shop-wrapper>li.shop-status-rented{background-color:rgba(105,220,251,.15);border:solid 1px #69dcfb;}
-ul.amp-shop-wrapper>li.shop-status-expired{background-color:rgba(250,210,78,.15);border:solid 1px #fad24c;}
-ul.amp-shop-wrapper>li.shop-status-arrearage{background-color:rgba(238,28,67,.15);border:solid 1px #ee1c43;}
+ul.amp-shop-wrapper>li.shop-status-rented{background-color:rgba(105,220,251,.15);/*border:solid 1px #69dcfb;*/}
+ul.amp-shop-wrapper>li.shop-status-expired{background-color:rgba(250,210,78,.15);/*border:solid 1px #fad24c;*/}
+ul.amp-shop-wrapper>li.shop-status-arrearage{background-color:rgba(238,28,67,.15);/*border:solid 1px #ee1c43;*/}
 ul.amp-shop-wrapper>li:hover,
-ul.amp-shop-wrapper>li.active{background-color:rgba(245,140,75,.15) !important;border:solid 1px #f58c4b !important;}
+ul.amp-shop-wrapper>li.active{background-color:rgba(245,140,75,.15) !important;/*border:solid 1px #f58c4b !important;*/}
 
 
 /*legend-wrapper*/
